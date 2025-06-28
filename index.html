@@ -74,7 +74,8 @@
     let currentQuote = "";
 
     async function fetchQuotes() {
-      const response = await fetch('https://zenquotes.io/api/quotes');
+      const response = await fetch('https://api.allorigins.win/raw?url=https://zenquotes.io/api/quotes');
+
       const data = await response.json();
       quotesCache = data.slice(0, 5).map(q => `${q.q} — ${q.a}`);
     }
